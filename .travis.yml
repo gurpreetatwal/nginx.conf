@@ -1,0 +1,10 @@
+language: shell
+
+addons:
+  apt:
+    packages:
+    - nginx
+
+script:
+  - sudo nginx -t -c "$(pwd)/nginx.conf"
+  - sudo cat /var/log/nginx/error.log
