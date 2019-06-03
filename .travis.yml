@@ -1,9 +1,14 @@
 language: shell
+dist: xenial
 
-addons:
-  apt:
-    packages:
-    - nginx
+
+install:
+  - curl "https://nginx.org/keys/nginx_signing.key" | sudo apt-key add -
+  - echo "deb https://nginx.org/packages/mainline/ubuntu/ xenial nginx" | sudo tee -a /etc/apt/sources.list
+  - echo "deb-src https://nginx.org/packages/mainline/ubuntu/ xenial nginx" | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
+  - sudo apt-get install nginx
+  - nginx -v
 
 script:
   - sudo nginx -t -c "$(pwd)/nginx.conf"
