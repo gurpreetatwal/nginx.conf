@@ -23,5 +23,8 @@ server {
 
   server_name _;
 
+  ssl_certificate /etc/nginx/sites-available/default.cert;
+  ssl_certificate_key /etc/nginx/sites-available/default.key;
+
   return 444;
 }
