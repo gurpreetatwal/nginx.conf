@@ -36,6 +36,9 @@ server {
 
   server_name _;
 
+  error_log /var/log/nginx/default.error.log;
+  access_log /var/log/nginx/default.access.log;
+
   ssl_certificate /etc/nginx/sites-available/default.cert;
   ssl_certificate_key /etc/nginx/sites-available/default.key;
 
