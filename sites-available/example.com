@@ -10,6 +10,19 @@ server {
   ssl_certificate '<template>';
   ssl_certificate_key '<template>';
 
+  ##
+  ## Referrer Policy (enabled by default)
+  ##
+  ## see: https://scotthelme.co.uk/a-new-security-header-referrer-policy/
+
+  set $server_referrer_policy "no-referrer-when-downgrade";
+
+  ##
+  ## X-XSS-Protection (enabled by default)
+  ##
+
+  set $server_x_xss_protection "1; mode=block";
+
   return 301 $scheme://$host$request_uri;
 }
 
