@@ -23,7 +23,7 @@ server {
 
   set $server_x_xss_protection "1; mode=block";
 
-  return 301 $scheme://$host$request_uri;
+  return 301 $scheme://example.com$request_uri;
 }
 
 server {
