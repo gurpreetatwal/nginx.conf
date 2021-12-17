@@ -67,8 +67,8 @@ server {
   ##
 
   # set $server_cors "*";
-  # include h5bp/cross-origin/requests.conf
-  # include h5bp/cross-origin/resource_timing.conf
+  # include h5bp/cross-origin/requests.conf;
+  # include h5bp/cross-origin/resource_timing.conf;
 
   ##
   ## System File Blocker
@@ -83,14 +83,14 @@ server {
   ## This will  allow you to use "virtual URLs" ie file.1.2.js for
   ## a file named file.js
 
-  # include h5bp/location/web_performance_filename-based_cache_busting.conf
+  # include h5bp/location/web_performance_filename-based_cache_busting.conf;
 
   ##
   ## CSP
   ##
 
   # set $server_content_security_policy "";
-  # include h5bp/security/content-security-policy.conf
+  # include h5bp/security/content-security-policy.conf;
 
   ##
   ## Referrer Policy (enabled by default)
